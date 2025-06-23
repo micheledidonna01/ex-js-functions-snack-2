@@ -13,3 +13,9 @@ sommaAnonima(3, 4);
 
 const sommaArrow = (a,b)=> console.log(a+b);
 sommaArrow(5, 6);
+
+
+/* Snack 2 */
+
+const numeroQuadrato = (a) => console.log(a * a);
+numeroQuadrato(2);

@@ -29,10 +29,22 @@ const eseguiOperazione = (a, b, operazione) => operazione(a, b);
 console.log(eseguiOperazione(4, 2, divisione));
 console.log(eseguiOperazione(10, 1, sottrazione));
 
+
 /* Snack 4 */
-
-function creaTimer(timer){
-    const timerOut = setTimeout(() => console.log("Tempo scaduto!"), timer) ;
+function creaTimer(timer, callback){
+    const timerOut = setTimeout(() => {
+        callback && callback();
+    }, timer);
 }
+creaTimer(3000, () => console.log("Tempo scaduto con callback!"));
 
-creaTimer(1000);
+
+/* Snack 5 */
+
+function stampaOgniSecondo(callback){
+    const ogniSecondo = setInterval(() => {
+        callback && callback()
+    }, 1000);
+    const stop = setTimeout(() => clearInterval(ogniSecondo), 5000);
+}
+stampaOgniSecondo(() => console.log("Ciao"));

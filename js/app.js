@@ -71,3 +71,16 @@ function creaContatoreAutomatico(timer, stopTimer) {
 
 const conta = creaContatoreAutomatico(1000, 5000);
 conta();
+
+/* Snack 7 */
+function eseguiEferma(callback, time, timeStop){
+
+    const start = setInterval(() => callback && callback(), time);
+    const stop = setTimeout(() => {
+        clearInterval(start);
+        console.log(`timer fermato dopo ${timeStop} secondi` );
+    }, timeStop)
+    
+}
+
+eseguiEferma(()=> console.log("Timer in esecuzione"), 1000, 5000);

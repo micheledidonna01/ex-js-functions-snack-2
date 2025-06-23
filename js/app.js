@@ -28,3 +28,11 @@ const eseguiOperazione = (a, b, operazione) => operazione(a, b);
 
 console.log(eseguiOperazione(4, 2, divisione));
 console.log(eseguiOperazione(10, 1, sottrazione));
+
+/* Snack 4 */
+
+function creaTimer(timer){
+    const timerOut = setTimeout(() => console.log("Tempo scaduto!"), timer) ;
+}
+
+creaTimer(1000);

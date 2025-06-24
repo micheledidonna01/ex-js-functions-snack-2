@@ -15,12 +15,12 @@ const sommaArrow = (a, b) => console.log(a + b);
 sommaArrow(5, 6);
 
 
-/* Snack 2 */
+// /* Snack 2 */
 
 const numeroQuadrato = (a) => console.log(a * a);
 numeroQuadrato(2);
 
-/* Snack 3 */
+// /* Snack 3 */
 const divisione = (a, b) => a / b;
 const sottrazione = (a, b) => a - b;
 
@@ -125,6 +125,33 @@ const timer = 2000;
 
 sequenzaOperazioni(operazioni, timer, 10, 2)
 
+/* Snack 10 */
+
+function creaThrottler(callback, limit){
+
+    let lastExecution = 0;
+
+    return function(...args) {
+        const now = Date.now();
+        if ((now - lastExecution) >= limit) {
+            lastExecution = now;
+            callback(...args);
+            
+        }
+    }
+
+}
+
+function logMessage() {
+    console.log("Eseguito in data ", new Date().toLocaleTimeString());
+};
+
+setInterval(() => {
+    throttler();
+}, 500); // Prova a chiamare la funzione ogni 500ms, ma verrà eseguita solo ogni 2000ms
+
+const throttler = creaThrottler(logMessage, 2000);
+throttler();
 
 
 

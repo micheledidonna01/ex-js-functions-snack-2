@@ -99,3 +99,34 @@ function timerDown(number){
 }
 
 timerDown(5);
+
+/* Snack 9 */
+function sequenzaOperazioni(operations, time, a, b){
+
+    operations.forEach((o, i)=> {
+            
+            setTimeout(()=>{
+                const result = o(a, b);    
+                console.log("operazione " + (i + 1) + " = " + result);
+            }, i * time)
+    })
+
+
+}
+
+const operazioni = [
+    (a, b) => a + b,
+    (a, b) => a - b,
+    (a, b) => a * b,
+    (a, b) => a / b
+];
+
+const timer = 2000;
+
+sequenzaOperazioni(operazioni, timer, 10, 2)
+
+
+
+
+
+

@@ -84,3 +84,18 @@ function eseguiEferma(callback, time, timeStop){
 }
 
 eseguiEferma(()=> console.log("Timer in esecuzione"), 1000, 5000);
+
+/* Snack 8 */
+function timerDown(number){
+    const countDown = setInterval(()=> {
+        number--;
+        console.log(number);
+        if(number === 0) {
+            console.log("Tempo scaduto!");
+            clearInterval(countDown);
+        }
+    }, 1000);
+
+}
+
+timerDown(5);
